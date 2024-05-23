@@ -8,6 +8,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { MainModuleComponent } from './components/main-module/main-module.component';
 import { NotificationDialogComponent } from './dialogs/notification-dialog/notification-dialog.component';
 import { SpinnerComponent } from './environment/utilities/spinner/spinner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SpinnerComponent } from './environment/utilities/spinner/spinner.compon
     HomePageComponent,
     MainModuleComponent,
     NotificationDialogComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    HeaderComponent,
+    FooterComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,

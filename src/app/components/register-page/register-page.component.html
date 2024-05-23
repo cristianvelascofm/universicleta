@@ -1,13 +1,21 @@
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Inicio de Sesión</h5>
+                <h5 class="modal-title" id="registerModalLabel">Registro</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
                 <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido">
+                    </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email">
@@ -17,11 +25,7 @@
                         <input type="password" class="form-control" id="password">
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary mb-3">Iniciar Sesión</button>
-                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#registerModal">
-                            Registrarme
-                        </button>
-                        <app-register-page></app-register-page>
+                        <button type="submit" class="btn btn-primary mb-3">Registrarme</button>
                     </div>
                 </form>
             </div>
