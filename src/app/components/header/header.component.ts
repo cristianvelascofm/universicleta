@@ -16,8 +16,8 @@ export class HeaderComponent {
 
   reservar() {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
-      disableClose: true,
-      // width: '800px',
+      disableClose: false,
+      width: '350px',
       // height: '800px'
       // data: {      
       // }

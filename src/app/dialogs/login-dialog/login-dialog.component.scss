@@ -1,18 +1,49 @@
+
+.modal-header{
+  box-shadow: 0 3px 10px rgba(3, 5, 7, 0.37);
+}
+
+.universicleta_logo{
+  height: 30px;
+  width: 210px;
+}
+
+.uverde_logo{
+  height: 60px;
+  width: 180px;
+}
+
 .form-field-wrapper {
     display: flex;
     align-items: center;
 }
 
+.example-full-width {
+  width: 100%;
+}
 .btn-confirm{
     width: 180px;
 }
+.right_panel{
+  // border-right: solid 1px;
+  margin-left: 20px;
+  box-shadow: 10px 0px 10px rgba(3, 10, 15, 0.24);
+  margin-right: -23px;
+  // width: 900px !important;
+}
 
+a{
+  font-size: 10px;
+}
+.registro{
+  color: gray;
+}
 .usuario {
     background-image: url('../../../assets/icons/persona.png');
-    min-height: 35px;
-    min-width: 35px;
-    max-height: 35px;
-    max-width: 35px;
+    min-height: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    max-width: 25px;
     background-size: 100%;
     margin-right: 10px !important;
     background-position: center;
@@ -20,12 +51,18 @@
 
   .password {
     background-image: url('../../../assets/icons/candado.png');
-    min-height: 35px;
-    min-width: 35px;
-    max-height: 35px;
-    max-width: 35px;
+    min-height: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    max-width: 25px;
     background-size: 100%;
     margin-right: 10px !important;
     background-position: center;
+  }
+
+
+  .capi_img{
+    width: 200px;
+    height: 100%;
   }
 
