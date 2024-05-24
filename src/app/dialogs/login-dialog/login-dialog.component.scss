@@ -1,0 +1,31 @@
+.form-field-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.btn-confirm{
+    width: 180px;
+}
+
+.usuario {
+    background-image: url('../../../assets/icons/persona.png');
+    min-height: 35px;
+    min-width: 35px;
+    max-height: 35px;
+    max-width: 35px;
+    background-size: 100%;
+    margin-right: 10px !important;
+    background-position: center;
+  }
+
+  .password {
+    background-image: url('../../../assets/icons/candado.png');
+    min-height: 35px;
+    min-width: 35px;
+    max-height: 35px;
+    max-width: 35px;
+    background-size: 100%;
+    margin-right: 10px !important;
+    background-position: center;
+  }
+

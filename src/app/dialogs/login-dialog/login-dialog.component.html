@@ -1,0 +1,39 @@
+<div>
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                <button mat-mini-fab color="warn" aria-label="Close" [mat-dialog-close]="true">X</button>
+            </div>
+            <div class="modal-body">
+
+                <form (ngSubmit)="login()" #recepcionForm="ngForm">
+                    <div class="mb-3 form-field-wrapper">
+                        <mat-icon class="usuario"></mat-icon>
+                        <mat-form-field class="example-full-width mt-2" style="width: 100%;">
+                            <mat-label>Usuario</mat-label>
+                            <input matInput placeholder="Usuario" name="user" [value]="usuario" [(ngModel)]="usuario"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3 form-field-wrapper">
+                        <mat-icon class="password"></mat-icon>
+                        <mat-form-field class="example-full-width mt-2" style="width: 100%">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" id="contrasena" name="contrasena"
+                                [(ngModel)]="password" required>
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                'visibility'}}</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <button mat-flat-button color="primary" class="btn-confirm" type="submit">Iniciar</button>
+                        <button mat-flat-button class="btn-confirm">Registrarme</button>
+                        <app-register-page></app-register-page>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

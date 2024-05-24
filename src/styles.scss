@@ -1,11 +1,132 @@
-/* globales */
+@use '@angular/material' as mat;
 
+
+@include mat.core();
+
+$vcb-red: (
+  50 : #fffbe0,
+  100 : #fff5b3,
+  200 : #ffee80,
+  300 : #ffe74d,
+  400 : #ffe126,
+  500 : #9D0311,
+  600 : #ffd800,
+  700 : #ffd300,
+  800 : #ffce00,
+  900 : #ffc500,
+  A100 : #ffffff,
+  A200 : #fffcf2,
+  A400 : #ffefbf,
+  A700 : #ffe8a6,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$vcb-blue: (
+  50 : #e0e5ea,
+  100 : #b3bfcb,
+  200 : #8094a8,
+  300 : #4d6985,
+  400 : #26486a,
+  500 : #000066,
+  600 : #002449,
+  700 : #001e40,
+  800 : #001837,
+  900 : #000f27,
+  A100 : #6287ff,
+  A200 : #2f61ff,
+  A400 : #003cfb,
+  A700 : #0036e1,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+
+
+$vcb-green: (
+  50 : #e0e5ea,
+  100 : #b3bfcb,
+  200 : #8094a8,
+  300 : #4d6985,
+  400 : #26486a,
+  500 : #249300,
+  600 : #002449,
+  700 : #001e40,
+  800 : #001837,
+  900 : #000f27,
+  A100 : #6287ff,
+  A200 : #2f61ff,
+  A400 : #003cfb,
+  A700 : #0036e1,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+$my-primary: mat.define-palette($vcb-blue, 500);
+$my-accent: mat.define-palette($vcb-green, 500);
+$my-warn: mat.define-palette($vcb-red, 500);
+
+$Universicleta-primary: mat.define-palette($my-primary);
+$Universicleta-accent: mat.define-palette($my-accent);
+
+
+$Universicleta-warn: mat.define-palette($my-warn);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+        accent: $my-accent,
+        warn: $my-warn )));
+
+
+@include mat.all-component-themes($my-theme);
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html,
 body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 app-root {
@@ -19,6 +140,11 @@ app-root {
   display: flex;
   flex-direction: column;
 }
+
+header {
+  box-shadow: 0 3px 10px rgba(22, 22, 23, 0.24);
+}
+
 
 footer {
   border-radius: 0 0 8px 8px;

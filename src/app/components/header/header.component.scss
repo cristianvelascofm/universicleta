@@ -1,0 +1,69 @@
+$primary : rgb(24, 133, 223);
+$warn : rgb(228, 26, 38);
+$accent :rgb(56, 203, 252);
+$hover-dark :rgb(64, 51, 182);
+$hover-light: rgb(123, 231, 247);
+
+header {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(24, 134, 223, 0.24);
+}
+
+.logo-vcb {
+  height: 80px;
+  width: 270px;
+  cursor: pointer;
+}
+
+.logo-universicleta {
+  height: 40px;
+  width: 280px;
+  cursor: pointer;
+}
+
+// Estilos para el menú de navegación
+ul {
+  background-color: rgba(255, 255, 255, 0);
+  height: 20%;
+  color: $primary;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center; // Centra horizontalmente los elementos
+  align-items: center;
+
+  // Estilos para cada elemento del menú
+  li {
+    display: flex;
+    justify-content: center; // Centra horizontalmente los elementos del menú
+    align-items: center; // Centra verticalmente los elementos del menú
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        // background-color: rgba(207, 32, 32, 0.1); // Cambia el color de fondo al pasar el ratón sobre los elementos del menú
+      }
+
+      &.selected {
+        background-color: rgba(255, 255, 255, 0.3); // Cambia el color de fondo cuando un elemento del menú está seleccionado
+      }
+    }
+  }
+
+  .principal-title:hover {
+    color: $hover-light
+  }
+
+
+  .principal-title.active {
+    color: $hover-light;
+  }
+}
