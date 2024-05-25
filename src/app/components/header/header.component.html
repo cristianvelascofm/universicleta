@@ -17,18 +17,23 @@
             </span>
           </li>
           <li class="nav-item">
-            <span class="principal-title" (click)="goTo('atenciones')"
-                        [class.active]="selectedItem === 'atenciones'">
-                        <span class="material-symbols-outlined">
-                            handshake
-                        </span>NOSOTROS</span>
+            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'atenciones'">
+              <span class="material-symbols-outlined">
+                handshake
+              </span>NOSOTROS</span>
           </li>
           <li class="nav-item">
-            <span class="principal-title" (click)="goTo('atenciones')"
-                        [class.active]="selectedItem === 'atenciones'">
-                        <span class="material-symbols-outlined">
-                          webhook
-                        </span>¿CÓMO FUNCIONA?</span>
+            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'atenciones'">
+              <span class="material-symbols-outlined">
+                webhook
+              </span>¿CÓMO FUNCIONA?</span>
+          </li>
+
+          <li class="nav-item" *ngIf="logged">
+            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'atenciones'">
+              <span class="material-symbols-outlined">
+                person
+              </span>CUENTA</span>
           </li>
         </ul>
         <div class="d-flex ms-auto align-items-center">

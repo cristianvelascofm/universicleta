@@ -1,0 +1,136 @@
+<!-- <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog"> -->
+<div class="modal-content" style="padding-left: 10px; padding-right: 10px;">
+    <!-- <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+    <div class="modal-body">
+
+        <div class="d-grid gap-2 d-md-flex justify-content-center mb-4">
+            <img src="../../../assets/images/UniversiCleta.png" alt="" class="universicleta_logo">
+        </div>
+
+        <div class="contenedor" style="display: flex; align-items: center;justify-content: center;">
+            <div class="login">
+                <form (ngSubmit)="registrar()" #registroForm="ngForm">
+
+                    <div class="row">
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="tipo-documento"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Tipo de Documento</mat-label>
+                                <mat-select id="tipo-documento" name="tipo-documento"
+                                    [(ngModel)]="tipoDocumento" required>
+                                    <mat-option value="cedula">Cédula de Ciudadanía</mat-option>
+                                    <mat-option value="cedula-extranjera">Cédula Extranjera</mat-option>
+                                    <mat-option value="pasaporte">Pasaporte</mat-option>
+                                    <mat-option value="dni">DNI</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="numero-documento"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Número de Documento</mat-label>
+                                <input matInput placeholder="Número" id="numero-documento" name="numero-documento"
+                                    [(ngModel)]="numeroDocumento" required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="nombres"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Nombres</mat-label>
+                                <input matInput placeholder="Nombres" id="nombre" name="nombre"
+                                    [(ngModel)]="nombre" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="apellidos"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Apellidos</mat-label>
+                                <input matInput placeholder="Apellidos" id="apellido" name="apellido"
+                                    [(ngModel)]="apellido" required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="perfil"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Perfil</mat-label>
+                                <mat-select id="cargo" name="cargo" [(ngModel)]="perfil" required>
+                                    <mat-option value="estudiante">Estudiante</mat-option>
+                                    <mat-option value="administrativo">Administrativo</mat-option>
+                                    <mat-option value="docente">Docente</mat-option>
+                                    <mat-option value="ops">OPS</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="dependencia"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Dependencia</mat-label>
+                                <mat-select id="dependencia" name="dependencia" [(ngModel)]="dependencia"
+                                    required>
+                                    <mat-option value="vcb">Vicerrectoría de Cultura y Bienestar</mat-option>
+                                    <mat-option value="salud">División de Gestión de Salud Integral y Desarrollo
+                                        Humano</mat-option>
+                                    <mat-option value="cultura">División de Gestión de la Cultura</mat-option>
+                                    <mat-option value="deportes">División de Gestión de Recreación y
+                                        Deporte</mat-option>
+                                    <mat-option value="permaneser">PermaneSer</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="password"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput [type]="hideP ? 'password' : 'text'" id="contrasena" name="contrasena"
+                                    [(ngModel)]="password" required (keydown.enter)="focusConfirmar()">
+                                <mat-icon matSuffix (click)="hideP = !hideP">{{hideP ? 'visibility_off' :
+                                    'visibility'}}</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 form-field-wrapper">
+                            <mat-icon class="password"/>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Confirmar Contraseña</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" id="confirmarContrasena"
+                                    name="confirmarContrasena" [(ngModel)]="confirmarContrasena" required>
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                    'visibility'}}</mat-icon>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+                            <div class="logo_uverde">
+                                <span class="logo"></span>
+                            </div>
+                        </div>
+                        <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+                            <div class="logo_vcb">
+                                <span class="logo"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items:end; justify-content: end; margin-top: 10px;">
+                        <button mat-raised-button color="primary" type="submit">Registrarse</button>
+                        <!-- [disabled]="!registroForm.valid" -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div>
+</div> -->

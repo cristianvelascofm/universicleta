@@ -8,14 +8,14 @@
             <div class="d-grid gap-2 d-md-flex justify-content-center mb-5">
                 <img src="../../../assets/images/UniversiCleta.png" alt="" class="universicleta_logo">
             </div>
-          
+
             <div class="col-12">
                 <form (ngSubmit)="login()" #recepcionForm="ngForm">
-                    <div class="mb-3 form-field-wrapper">
+                    <div class="form-field-wrapper">
                         <mat-icon class="usuario"></mat-icon>
                         <mat-form-field class="example-full-width mt-2">
                             <mat-label>Usuario</mat-label>
-                            <input matInput placeholder="Usuario" name="user" [value]="usuario" [(ngModel)]="usuario"
+                            <input matInput placeholder="Número de documento" name="user" [value]="usuario" [(ngModel)]="usuario"
                                 required>
                         </mat-form-field>
                     </div>
@@ -31,26 +31,19 @@
 
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <!-- <a href="">¿Olvidaste la Contraseña?</a> -->
                         <button mat-flat-button color="primary" class="btn-confirm" type="submit">Iniciar</button>
-                        <!-- <button mat-flat-button class="btn-confirm">Registrarme</button> -->
-                        <!-- <app-register-page></app-register-page> -->
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
                         <a href="">¿Olvidaste la Contraseña?</a>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <a href="" class="registro">Regístrate ahora.</a>
+                        <a class="registro" (click)="registrar()"  [mat-dialog-close]="true">Regístrate ahora</a>
                     </div>
                 </form>
                 <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
                     <img src="../../../assets/images/UVerde.png" class="uverde_logo" alt="">
                 </div>
             </div>
-            <!-- <div class="col-6">
-                <img src="../../../assets/images/Capi.png" alt="" class="capi_img">
-            </div> -->
         </div>
-
     </div>
 </div>

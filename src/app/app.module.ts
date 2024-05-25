@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginDialogComponent } from './dialogs/login-dialog/login-dialog.component';
+import { RegisterDialogComponent } from './dialogs/register-dialog/register-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginDialogComponent } from './dialogs/login-dialog/login-dialog.compon
     HeaderComponent,
     FooterComponent,
     RegisterPageComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule,

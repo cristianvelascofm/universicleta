@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { environment } from 'src/app/environment/config';
 import { PersonService } from 'src/app/services/person.service';
+import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-login-dialog',
@@ -10,7 +11,7 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class LoginDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string, private personaService: PersonService,) {
+  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string, private personaService: PersonService, public dialog: MatDialog) {
   }
 
   usuario = ''
@@ -20,7 +21,7 @@ export class LoginDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
   // En el componente LoginPanel
   @Output() usuarioEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() usuarioLoggeado: EventEmitter<string> = new EventEmitter<string>();
@@ -34,20 +35,30 @@ export class LoginDialogComponent implements OnInit {
     }
     else {
 
-      this.respuestaJson = await this.personaService.login(this.usuario, this.password);
-      console.log(this.respuestaJson)
-      if (this.respuestaJson['error']) {
-        alert("ERROR " + this.respuestaJson['error'])
-      }
-      else {
-        alert('Bienvenido!')
-        environment.setUserSession(this.usuario);
-        environment.setTokenUserSession(this.respuestaJson['acces_token']);
-        environment.setRoleUserSession(this.respuestaJson['role']);
-        // environment.setPermisosExtraUserSession(this.respuestaJson['permisos']);
-        // environment.setAreaUserSession(this.respuestaJson['area']);        
-        this.usuarioEvent.emit(true);
-      }
+      this.personaService.login(this.usuario, this.password).subscribe((response: any) => {
+        console.log("Respuesta: ", response);
+        this.respuestaJson = response;
+        if (!response["error"]) {
+          environment.setUserSession(this.usuario)
+          environment.setTokenUserSession(response["acces_token"])
+          environment.setRoleUserSession(response["role"])
+          alert("Bienvenido");
+          this.dialogRef.close();
+        } else {
+          alert("Error: " + response["error"])
+        }
+
+      })
     }
+  }
+
+
+  registrar() {
+    const dialogRef = this.dialog.open(RegisterDialogComponent, {
+      disableClose: false,
+      width: '580px',
+    });
+    dialogRef.afterClosed().subscribe(res => {
+    })
   }
 }
