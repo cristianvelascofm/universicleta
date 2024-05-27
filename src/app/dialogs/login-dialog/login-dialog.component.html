@@ -1,8 +1,14 @@
 <div class="modal-content">
-    <!-- <div class="modal-header">
-        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
-        <button mat-mini-fab color="warn" aria-label="Close" [mat-dialog-close]="true">X</button>
+    <!-- <div class="modal-header"> -->
+    <!-- <div class="mb-0 ml-1">
+        <button mat-mini-fab color="warn" aria-label="Close" [mat-dialog-close]="true"
+            style="height: 20px;width: 20px;">X</button>
     </div> -->
+
+    <!-- <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5> -->
+
+
+    <!-- </div> -->
     <div class="modal-body mt-3">
         <div class="row">
             <div class="d-grid gap-2 d-md-flex justify-content-center mb-5">
@@ -15,8 +21,8 @@
                         <mat-icon class="usuario"></mat-icon>
                         <mat-form-field class="example-full-width mt-2">
                             <mat-label>Usuario</mat-label>
-                            <input matInput placeholder="Número de documento" name="user" [value]="usuario" [(ngModel)]="usuario"
-                                required>
+                            <input matInput placeholder="Número de documento" name="user" [value]="usuario"
+                                [(ngModel)]="usuario" required>
                         </mat-form-field>
                     </div>
                     <div class="mb-3 form-field-wrapper">
@@ -37,7 +43,7 @@
                         <a href="">¿Olvidaste la Contraseña?</a>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <a class="registro" (click)="registrar()"  [mat-dialog-close]="true">Regístrate ahora</a>
+                        <a class="registro" (click)="registrar()" [mat-dialog-close]="true">Regístrate ahora</a>
                     </div>
                 </form>
                 <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">

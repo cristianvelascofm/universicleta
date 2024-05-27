@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit {
 
 
   verificatorLogin(){
-    if (environment.getUserSession() != '' || environment.getUserSession() != undefined){
+    if (environment.getUserSession()!='null'){
       this.logged = true
     }
     else{
