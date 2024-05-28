@@ -13,6 +13,7 @@ import { SpinnerService } from 'src/app/services/spinner.service';
 export class LoginDialogComponent implements OnInit {
 
   constructor(private spinner: SpinnerService, public dialogRef: MatDialogRef<LoginDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string, private personaService: PersonService, public dialog: MatDialog) {
+    
   }
 
   usuario = ''

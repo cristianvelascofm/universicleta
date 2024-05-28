@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginDialogComponent } from 'src/app/dialogs/login-dialog/login-dialog.component';
 import { environment } from 'src/app/environment/config';
+import { UniversicletaService } from 'src/app/services/universicleta.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,18 @@ import { environment } from 'src/app/environment/config';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private universicletaService: UniversicletaService) {
 
   }
+
+  home = true;
+  atenciones = false;
+  proyectos = false;
+  place = false;
+  finance = false;
+  agenda = false;
+  registro = false;
+  currentYear = new Date().getFullYear(); selectedItem: string = 'home';
   ngOnInit(): void {
     this.verificatorLogin()
   }
@@ -24,34 +34,35 @@ export class HeaderComponent implements OnInit {
       disableClose: false,
       width: '350px',
       // height: '800px'
-      // data: {      
-      // }
+      data: {
+        title: 'Iniciar Sesión',
+        logged: this.logged
+      }
     });
     dialogRef.afterClosed().subscribe(res => {
-    this.verificatorLogin()
+      this.verificatorLogin()
 
     })
   }
 
-  home = true;
-  atenciones = false;
-  proyectos = false;
-  place = false;
-  finance = false;
-  agenda = false;
-  registro = false;
-  currentYear = new Date().getFullYear(); selectedItem: string = 'home';
+
 
   goTo(selector: string) { }
 
   logout() { }
 
+  ping() {
+    this.universicletaService.ping().subscribe(res => {
+      console.log("Respuesta 8266: ", res)
+    })
+  }
 
-  verificatorLogin(){
-    if (environment.getUserSession()!='null'){
+  
+  verificatorLogin() {
+    if (environment.getUserSession() != 'null') {
       this.logged = true
     }
-    else{
+    else {
       this.logged = false
     }
   }
