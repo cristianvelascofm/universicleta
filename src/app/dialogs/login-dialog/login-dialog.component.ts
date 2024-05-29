@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { environment } from 'src/app/environment/config';
 import { PersonService } from 'src/app/services/person.service';
 import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-login-dialog',
@@ -11,7 +12,8 @@ import { RegisterDialogComponent } from '../register-dialog/register-dialog.comp
 })
 export class LoginDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string, private personaService: PersonService, public dialog: MatDialog) {
+  constructor(private spinner: SpinnerService, public dialogRef: MatDialogRef<LoginDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string, private personaService: PersonService, public dialog: MatDialog) {
+    
   }
 
   usuario = ''
@@ -34,20 +36,21 @@ export class LoginDialogComponent implements OnInit {
       alert('Debe ingresar todos los campos');
     }
     else {
-
+      this.spinner.show()
       this.personaService.login(this.usuario, this.password).subscribe((response: any) => {
         console.log("Respuesta: ", response);
         this.respuestaJson = response;
         if (!response["error"]) {
+          this.spinner.hide()
           environment.setUserSession(this.usuario)
           environment.setTokenUserSession(response["acces_token"])
           environment.setRoleUserSession(response["role"])
           alert("Bienvenido");
           this.dialogRef.close();
         } else {
+          this.spinner.hide()
           alert("Error: " + response["error"])
         }
-
       })
     }
   }

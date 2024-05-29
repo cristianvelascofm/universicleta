@@ -7,7 +7,8 @@ export const environment = {
 
     getUserSession(): string {
         let userName = localStorage.getItem("usuario");
-        if (userName == null) return "null";
+        console.log('Usuario: ', userName)
+        if (userName == null) return 'null'
         else return userName;
     },
 
