@@ -1,0 +1,67 @@
+$primary : rgb(24, 133, 223);
+$warn : rgb(228, 26, 38);
+$accent :rgb(56, 203, 252);
+$hover-dark :rgb(64, 51, 182);
+$hover-light: rgb(123, 231, 247);
+
+.parent-div {
+    background-color: $accent; 
+    padding: 20px; 
+    border-radius: 15px;
+    width: 80%; 
+    margin: 20px auto;
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.col-md-6.text-center.d-flex {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    text-align: center; /* Asegura que el contenido del div esté centrado */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.btn{
+    border-radius: 15px;
+}
+
+.container {
+  width: 100%;
+}
+
+.img-fluid {
+    max-width:45%;
+    height: min-content;
+}
+
+.inicio {
+    background-color: #112979;
+    padding: 40px 0;
+}
+
+.inicio h2{
+    color: white;
+    margin-top: 3rem;   
+    margin-left: 70px;
+}
+
+.inicio p.first{
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 70px;
+    font-size: 18px;
+}
+

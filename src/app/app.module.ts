@@ -20,6 +20,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginDialogComponent } from './dialogs/login-dialog/login-dialog.component';
 import { RegisterDialogComponent } from './dialogs/register-dialog/register-dialog.component';
+import { HowToUsePageComponent } from './components/how-to-use-page/how-to-use-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegisterDialogComponent } from './dialogs/register-dialog/register-dial
     FooterComponent,
     RegisterPageComponent,
     LoginDialogComponent,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    HowToUsePageComponent
   ],
   imports: [
     BrowserModule,

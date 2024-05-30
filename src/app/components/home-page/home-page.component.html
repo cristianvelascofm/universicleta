@@ -1,54 +1,80 @@
-<div class="container mt-4">
-    <!-- Sección de descripción -->
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <h2>Vive la sensación única de moverte en bici</h2>
-            <p>Descubre una nueva forma de moverte por el campus y la ciudad con Universicleta. Fomenta el uso de la
-                bicicleta como transporte sostenible y saludable mientras disfrutas de una nueva experiencia.</p>
+<div class="container-fluid">
+    <!-- Sección de bienvenida -->
+    <div class="inicio row mb-4">
+
+        <div class="parent-div">
+            <div class="child-div">
+                Este es el contenido del div más pequeño.
+            </div>
         </div>
-        <div class="col-md-6 text-center">
-            <img src="../../../assets/bici.jpg" alt="Bici Universicleta" class="img-fluid rounded">
+
+        <div class="col-md-6 pr-md-0">
+            <h2 class="text-left">Vive la sensación única de moverte en bici</h2>
+            <p class="text-left">¡Haz del campus tu carril y unete a Universicleta!</p>
+            <p class="text-left">¡Bienvenido a Universicleta, el servicio de alquiler de bicicletas diseñado
+                especialmente para la
+                comunidad universitaria de la Universidad del Cauca! En Universicleta, estamos comprometidos con la
+                promoción de un estilo de vida saludable, sostenible y amigable con el medio ambiente.</p>
+        </div>
+        <div class="col-md-6 text-center ">
+            <img src="../../../assets/images/Capi.png" alt="Bici Universicleta" class="img-fluid rounded">
         </div>
     </div>
 
     <!-- Sección de estadísticas -->
-    <div class="row text-center mb-4">
-        <div class="col-md-6">
-            <h3>96</h3>
-            <p>Bicis eléctricas</p>
+    <div class="estadistica row mb-4">
+        <div class="col-md-6 pr-md-0">
+            <h2>Vive la sensación única <br> de moverte en bici</h2>
+            <p class="subt">¡Descubre una nueva forma de moverte por el campus y la ciudad con
+                Universicleta! Sumérgete en la experiencia de pedalear hacia un futuro más sostenible y saludable
+                mientras disfrutas de una serie de beneficios exclusivos.</p>
         </div>
-        <div class="col-md-6">
-            <h3>8</h3>
-            <p>Estaciones</p>
-        </div>
-        <div class="col-md-6">
-            <span class="material-symbols-outlined big-text">
-            compost
-            </span>            
-            <p>Transporte Sustentable</p>
-        </div>
-        <div class="col-md-6">
-            <span class="material-symbols-outlined big-text">
-            mobile_friendly
-            </span>
-            <p>Gestion Rapida en la Web</p>
+        <div class="col-md-6 pr-md-0 text-center">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-md-6 text-center">
+                    <h3>96</h3>
+                    <p class="sbt">Bicis eléctricas</p>
+                    <span class="material-symbols-outlined big-text">
+                        compost
+                    </span>
+                    <p class="sbt">Transporte Sustentable</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>8</h3>
+                    <p class="sbt">Estaciones</p>
+                    <span class="material-symbols-outlined big-text">
+                        mobile_friendly
+                    </span>
+                    <p class="sbt">Gestion Rapida en la Web</p>
+                </div>
+            </div>
         </div>
     </div>
 
+
     <!-- Sección de bici -->
-    <div class="row mb-4">
+    <!-- TODO: Btns tipo de bicis-->
+    <div class="bici row mb-4">
         <div class="col text-center">
-            <h2>¡Bicicletas de alta calidad disponibles para  nuestra comunidad Universitaria!</h2>
-            <img src="../../../assets/mapa.png" alt="imagen bici" class="img-fluid rounded">
+            <h2>¡Bicicletas de alta calidad disponibles para nuestra comunidad Universitaria!</h2>
+            <img src="../../../assets/images/bike_inicio.png" alt="imagen bici" class="img-fluid rounded">
         </div>
     </div>
 
     <!-- Sección de mapa -->
-    <div class="row mb-4">
+    <!-- TODO: hay mapa open source, le puedo colocar marcas para las estaciones. este es embedmap-->
+    <div class="map row mb-4">
         <div class="col text-center">
             <h2>Nuestras Estaciones</h2>
             <p>Consulta las estaciones que ya están en la calle y la disponibilidad de bicis desde tu perfil.</p>
-            <img src="../../../assets/mapa.png" alt="Mapa de estaciones" class="img-fluid rounded">
+            <div class="mapdraw">
+                <div class="gmap_canvas">
+                    <iframe width="780" height="283" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=universidad%20del%20cauca%20facultad%20de%20salud&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Mapa estaciones">
+                    </iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
