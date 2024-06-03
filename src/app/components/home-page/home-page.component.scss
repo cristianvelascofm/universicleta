@@ -5,23 +5,31 @@ $hover-dark :rgb(64, 51, 182);
 $hover-light: rgb(123, 231, 247);
 
 .parent-div {
-    background-color: #f0f0f0; /* Color del div padre */
-    padding: 20px; /* Padding del div padre */
-    border: 1px solid #ccc; /* Borde del div padre */
-    position: relative; /* Posicionamiento relativo para el div padre */
-    width: 80%; /* Ancho del div padre */
-    margin: 20px auto; /* Centrando el div padre en la página */
-    text-align: center; /* Centrando el texto dentro del div padre */
+    color: white;
+    background-color: #DB141C;      
+    padding: 10px; 
+    border: 2px solid #ffffff;
+    position: relative; 
+    width: 51%; 
+    margin: 20px auto; 
+    text-align: center;
+    border-radius: 20px;
 }
   
 .child-div {
-    background-color: #007bff; /* Color del div hijo */
-    padding: 10px; /* Padding del div hijo */
-    border: 1px solid #0056b3; /* Borde del div hijo */
-    width: 50%; /* Ancho del div hijo (ajústalo según tus necesidades) */
-    margin: 0 auto; /* Centrando horizontalmente el div hijo */
-    text-align: center; /* Centrando el texto dentro del div hijo */
+    color: white;
+    background-color: #1D72D3; 
+    padding: 10px; 
+    border: 2px solid #ffffff; 
+    width: 30%; 
+    text-align: center; 
+    border-radius: 20px;
+    position: absolute; 
+    bottom: -35px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
+
 
 .container {
   width: 100%;
