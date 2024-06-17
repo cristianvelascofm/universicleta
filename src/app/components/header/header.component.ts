@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginDialogComponent } from 'src/app/dialogs/login-dialog/login-dialog.component';
 import { environment } from 'src/app/environment/config';
@@ -28,6 +28,8 @@ export class HeaderComponent implements OnInit {
   title: string = 'Logo'
   logged = false
 
+  @Output()
+  menuSelector: EventEmitter <string> = new EventEmitter <string>();
 
   reservar() {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
@@ -47,7 +49,10 @@ export class HeaderComponent implements OnInit {
 
 
 
-  goTo(selector: string) { }
+  goTo(window: string){
+    this.menuSelector.emit(window);
+   
+  }
 
   logout() { }
 
