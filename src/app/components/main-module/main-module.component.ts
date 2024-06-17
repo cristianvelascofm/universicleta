@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MainModuleComponent {
 home = true
-nosotros = false
+nosotros = true
 comoFunciona = true
 }

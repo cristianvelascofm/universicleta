@@ -1,0 +1,41 @@
+<div class="bigcontainer">
+    <div class="greeting">Hola, {{ user }}
+        <button class="btn btn-cancel btn-danger" (click)="reportarNovedad()">Reportar una novedad</button>
+    </div>
+
+    <div class="container">
+        <div class="station-selector">
+            <div class="input-group">
+                <span class="input-group-text">Selecciona tu estación de entrega</span>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle station-dropdown" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ selectedStation ? selectedStation : 'Selecciona una estación' }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#"
+                                (click)="selectStation('Facultad Ciencias Agrarias')">Facultad
+                                Ciencias Agrarias</a></li>
+                        <li><a class="dropdown-item" href="#" (click)="selectStation('Facultad de Salud')">Facultad de
+                                Salud</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                (click)="selectStation('Facultad de Ingenierías')">Facultad de
+                                Ingenierías</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="reservation-details-container text-center mt-3">
+            <p>{{ currentDateTime }}</p>
+            <p>La bici que estas usando es: {{ bikeName }} - {{ bikeNumber }}</p>
+            <p>Estacion de partida: {{ estpartida }}</p>
+            <div *ngIf="countdownMinutes > 0 || countdownSeconds > 0">
+                <p>Temporizador: {{ countdownMinutes }} min {{ countdownSeconds }} seg restantes</p>
+                <div class="button-container mt-3">
+                    <button class="btn btn-unlock btn-success" (click)="entregar()">Entregar Bici</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+$primary : rgb(24, 133, 223);
+$warn : rgb(228, 26, 38);
+$accent :rgb(56, 203, 252);
+$hover-dark :rgb(64, 51, 182);
+$hover-light: rgb(123, 231, 247);
+
+.greeting {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: $hover-dark;
+}
+
+.bigcontainer {
+    background-color: $hover-dark;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.station-selector {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.station-dropdown {
+    margin-left: 10px;
+    background-color: #f0f0f0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-reserve {
+    margin-top: 10px;
+}
+
+.btn-unlock {
+    margin-top: 10px;
+}
+
+.btn-cancel {
+    margin: 10px 0;
+    margin-left: 70rem;
+}
+
+.reservation-details-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

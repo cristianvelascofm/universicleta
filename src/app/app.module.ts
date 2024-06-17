@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginDialogComponent } from './dialogs/login-dialog/login-dialog.component';
 import { RegisterDialogComponent } from './dialogs/register-dialog/register-dialog.component';
 import { HowToUsePageComponent } from './components/how-to-use-page/how-to-use-page.component';
+import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
+import { EntregaPageComponent } from './components/entrega-page/entrega-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HowToUsePageComponent } from './components/how-to-use-page/how-to-use-p
     RegisterPageComponent,
     LoginDialogComponent,
     RegisterDialogComponent,
-    HowToUsePageComponent
+    HowToUsePageComponent,
+    ReservationPageComponent,
+    EntregaPageComponent
   ],
   imports: [
     BrowserModule,

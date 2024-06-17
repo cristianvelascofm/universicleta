@@ -5,45 +5,44 @@ $hover-dark :rgb(64, 51, 182);
 $hover-light: rgb(123, 231, 247);
 
 .parent-div {
-    background-color: $accent; 
-    padding: 20px; 
+    background-color: $accent;
+    padding: 20px;
     border-radius: 15px;
-    width: 80%; 
+    width: 80%;
     margin: 20px auto;
     text-align: center;
 }
 
-.image {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-}
-
 .col-md-6.text-center.d-flex {
     display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    text-align: center; /* Asegura que el contenido del div esté centrado */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .button-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
-.btn{
+.btn {
     border-radius: 15px;
 }
 
 .container {
-  width: 100%;
+    width: 100%;
 }
 
 .img-fluid {
-    max-width:45%;
+    max-width: 45%;
     height: min-content;
+}
+
+.img-cus{
+    max-width: 70%;
+    height: auto;
 }
 
 .inicio {
@@ -51,13 +50,13 @@ $hover-light: rgb(123, 231, 247);
     padding: 40px 0;
 }
 
-.inicio h2{
+.inicio h2 {
     color: white;
-    margin-top: 3rem;   
+    margin-top: 3rem;
     margin-left: 70px;
 }
 
-.inicio p.first{
+.inicio p.first {
     color: white;
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -65,3 +64,64 @@ $hover-light: rgb(123, 231, 247);
     font-size: 18px;
 }
 
+.secone{
+    padding: 60px 0;
+}
+
+.secone h2{
+    margin-bottom: 4rem;
+}
+
+.sectree{
+    padding: 40px 0;
+    margin-top: 3rem;
+}
+
+.title{
+    color: $hover-dark;
+}
+
+.stitle{
+    color: $accent;
+}
+
+.small-carousel {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.carousel-indicators {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.carousel-indicators button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.carousel-indicators button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.carousel-indicators button:focus {
+    outline: none;
+}
