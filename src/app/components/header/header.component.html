@@ -17,20 +17,20 @@
             </span>
           </li>
           <li class="nav-item">
-            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'nosotros'">
+            <span class="principal-title" (click)="goTo('nosotros')" [class.active]="selectedItem === 'nosotros'">
               <span class="material-symbols-outlined">
                 handshake
               </span>NOSOTROS</span>
           </li>
           <li class="nav-item">
-            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'como'">
+            <span class="principal-title" (click)="goTo('funciona')" [class.active]="selectedItem === 'como'">
               <span class="material-symbols-outlined">
                 webhook
               </span>¿CÓMO FUNCIONA?</span>
           </li>
 
           <li class="nav-item" *ngIf="logged">
-            <span class="principal-title" (click)="goTo('atenciones')" [class.active]="selectedItem === 'cuenta'">
+            <span class="principal-title" (click)="goTo('cuenta')" [class.active]="selectedItem === 'cuenta'">
               <span class="material-symbols-outlined">
                 person
               </span>CUENTA</span>
@@ -38,7 +38,7 @@
         </ul>
         <div class="d-flex ms-auto align-items-center">
           <button class="me-2" mat-flat-button color="accent" (click)="ping()">ESP8266</button>
-          <button class="me-2" mat-flat-button color="primary" (click)="reservar()">Reservar</button>
+          <button class="me-2" mat-flat-button color="primary"  (click)="reservar()">Reservar</button>
           <app-login-page></app-login-page>
           <img src="../../../assets/images/Logos-ViceCultura-y-División-de-Deporte.png" alt="vicerectoria"
             class="logo-vcb">
