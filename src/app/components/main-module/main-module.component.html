@@ -1,7 +1,10 @@
 <app-header (menuSelector)="actualWindow($event)" />
- <app-home-page *ngIf="home" />
- <!-- <app-nosotros *ngIf="nosotros"/> -->
- <app-how-to-use *ngIf="comoFunciona"/>
- <app-entrega-page *ngIf="entrega"></app-entrega-page>
- <app-reservation-page *ngIf="reserva"></app-reservation-page>
-<app-footer/>
+<div class="content">
+    <app-home-page *ngIf="home" />
+    <!-- <app-nosotros *ngIf="nosotros"/> -->
+    <app-how-to-use *ngIf="comoFunciona" />
+    <app-entrega-page *ngIf="entrega" />
+    <app-reservation-page *ngIf="reserva" />
+</div>
+
+<app-footer />

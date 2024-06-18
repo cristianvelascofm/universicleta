@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-module.component.scss']
 })
 export class MainModuleComponent {
-home = false
+home = true
 nosotros = false
 comoFunciona = false
 entrega = false
-reserva = true
+reserva = false
 cuenta = false
 
 

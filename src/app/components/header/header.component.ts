@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit {
   logout() { }
 
   ping() {
+    console.log("Realizando Ping...")
     this.universicletaService.ping().subscribe(res => {
       console.log("Respuesta 8266: ", res)
     })
