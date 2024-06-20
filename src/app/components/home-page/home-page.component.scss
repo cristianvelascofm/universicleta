@@ -7,50 +7,95 @@ $hover-light: rgb(123, 231, 247);
 
 .container-principal {
     width: 100% !important;
-    // height: 200px;
-    background-color: #7ED957;
+    height: 200px;
+    background-color: #000066;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    // align-items: center;
 }
 
-.inicio {
-    background-color: #112979;
-    width: 100% !important;
-    height: auto;
-    padding-top: 40px;
-}
-
-
-.parent-div {
+.container_preguntas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     background-color: #DB141C;
-    padding: 10px;
     border: 2px solid #ffffff;
-    position: relative;
-    width: 51%;
-    margin: 20px auto;
-    text-align: left;
     border-radius: 20px;
+    width: 55% !important;
+    height: 130px;
+    padding: 10px;
 }
 
-.child-div {
-    color: white;
-    background-color: #1D72D3;
-    padding: 10px;
-    border: 2px solid #ffffff;
-    width: 30%;
+.text_preguntas {
+    width: 100% !important;
     text-align: center;
-    // border-radius: 20px;
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
+    // background-color: #7ED957;
+}
+
+.button_preguntas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: #1D72D3;
+
+}
+
+.container_presentacion {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #000066;
+    width: 100% !important;
+    padding: 10px;
+}
+
+
+.text_presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.text_presentacion h2 {
+    width: 100%; /* Asegura que el encabezado esté justificado */
+    text-align: center !important;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.text_presentacion p {
+    width: 100%; /* Asegura que los párrafos estén justificados */
+    text-align: justify !important;
+}
+
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .btn_unete{
+        color: white;
+        background-color: #00AAE5;
+        border: 1px solid white;
+    }
 }
 
 
 
 
 .img-fluid {
-    max-width: 45%;
+    width: 610px;
+    height: 550px !important;
     height: min-content;
+    border-radius: 50px !important;
+    border: 2px solid white;
 }
 
 .big-text {
