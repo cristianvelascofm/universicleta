@@ -2,28 +2,29 @@
     <div class="container py-2">
         <div class="text-container">
             <p class="text-center text-white my-2">
-                &copy; {{proyecto.anio + ' ' + proyecto.nombreProyecto}}
+                {{autor}}
             </p>
             <p class="text-center text-white my-2">
                 {{dependencia}}
             </p>
-            <p class="text-center text-white my-2">
-                {{autor}}
-            </p>
-            <p class="text-center text-white my-2">
+
+            <!-- <p class="text-center text-white my-2">
                 {{ayuda}}
-            </p>
+            </p> -->
             <p class="text-center text-white my-2">
                 {{docs.condiciones}} | {{docs.politica}}
             </p>
+            <p class="text-center text-white my-2">
+                {{proyecto.anio + ' ' + proyecto.nombreProyecto}} &copy;
+            </p>
         </div>
-        <div class="icon-container text-center">
+        <!-- <div class="icon-container text-center">
             <a href="https://www.facebook.com" target="_blank">
                 <i class="fab fa-facebook social-icon"></i>
             </a>
             <a href="https://www.instagram.com" target="_blank">
                 <i class="fab fa-instagram social-icon"></i>
             </a>
-        </div>
+        </div> -->
     </div>
 </footer>
