@@ -8,18 +8,29 @@ header {
   margin: 0px;
   padding: 0px;
   width: 100%;
+  height: 80px !important;
   box-shadow: 0 3px 10px rgba(24, 134, 223, 0.24);
 }
 
 .logo-vcb {
-  height: 80px;
-  width: 270px;
+  min-width: 290px;
+  width: 290px;
+  max-width: 290px;
   cursor: pointer;
 }
 
 .logo-universicleta {
-  height: 40px;
-  width: 280px;
+  // height: 20px;
+  min-width: 200px;
+  width: 200px;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.capi {
+  // min-width: 100px;
+  width: 70px;
+  // max-width: 290px;
   cursor: pointer;
 }
 

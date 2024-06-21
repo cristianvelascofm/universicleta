@@ -8,31 +8,43 @@ $hover-light: rgb(123, 231, 247);
 
 .container-principal {
     width: 100%;
-    max-width: 100%; /* Asegura que el contenedor principal no exceda el ancho de la pantalla */
+    max-width: 100%;
+    /* Asegura que el contenedor principal no exceda el ancho de la pantalla */
     // background-color: #000066;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
-    overflow-x: hidden; /* Evita el scroll horizontal en el contenedor principal */
+    overflow-x: hidden;
+    /* Evita el scroll horizontal en el contenedor principal */
 }
 
-.cont_color{
+.cont_color {
     background-color: #000066;
     padding: 10px;
     // width: 100% !important;
-    height: 600px;
+    // height: 730px;
+
+    padding-top: 30px;
+    border-radius: 25px;
+    margin-bottom: 20px;
 }
+
 .container_uno,
 .container_preguntas_child,
 .container_dos,
 .container_tres,
 .container_cuatro {
     width: 100%;
-    max-width: 1140px; /* Ancho máximo para centrar */
+    max-width: 1140px;
+    /* Ancho máximo para centrar */
     padding: 0 15px;
     margin-bottom: 30px;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-x: hidden;
+    /* Evita scroll horizontal */
+}
+
+.container_uno {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,11 +65,13 @@ $hover-light: rgb(123, 231, 247);
 
 .text_presentacion {
     color: white;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    word-break: break-word; /* Asegura que las palabras largas no causen desbordamiento */
+    // justify-content: center;
+    // text-align: justify;
+    word-break: break-word;
+    /* Asegura que las palabras largas no causen desbordamiento */
 }
 
 .text_presentacion h2,
@@ -68,29 +82,81 @@ $hover-light: rgb(123, 231, 247);
 }
 
 .text_presentacion h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    text-align: left;
+    font-size: 50px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    // text-transform: uppercase;
 }
 
 .text_presentacion h5 {
     text-align: left;
+    margin-bottom: 50px;
+    font-weight: lighter;
+
+}
+
+.text_presentacion p {
+    text-align: justify;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+.text_presentacion button {
+    text-align: center;
+    width: 30%;
+    background-color: #00AAE5;
     margin-bottom: 10px;
+    font-size: 17px;
 }
 
 .img-fluid {
-    width: 100%;
-    height: auto;
-    max-width: 100%; /* Asegura que la imagen no desborde */
-    border-radius: 20px;
-    border: 2px solid white;
+    border-radius: 20px !important;
+    // border: 2px solid white;
+}
+
+.img_portada {
+    // width:710px !important;
+    height: 510px !important;
 }
 
 .container_dos {
     background-color: #fff;
     color: #000;
-    border-radius: 20px;
+    border-radius: 25px;
     overflow: hidden; /* Oculta cualquier desbordamiento */
+    display: block !important;
+    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    // height: 600px;
+
+    h2 {
+        color: #DB141C;
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+    h3{
+        color: #00AAE5;
+        font-size: 60px;
+    }
+    span{
+        color: #00AAE5;
+        // height: 70px;
+    }
+    
+    .subt_t{
+        // color: #000066;
+        text-align: justify;
+    }
+    .sbt{
+        font-size: 20px;
+        margin-bottom: 50px;
+        font-weight: bold;
+    }
+   
 }
 
 .container_tres,
@@ -98,6 +164,32 @@ $hover-light: rgb(123, 231, 247);
     text-align: center;
     background-color: #fff;
     border-radius: 20px;
+}
+
+.container_tres{
+    // background-color: red;
+    border-radius: 25px;
+    // padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    h2{
+        // width: 80%;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #000066;
+    }
+    img{
+        margin-top: 20px;
+        width: 50%;
+    }
+    button{
+        margin-right: 20px;
+        background-color: #5A00BA;
+        color: white;
+    }
+    button:disabled{
+        background-color: #b2b1b1;
+    }
 }
 
 .sbt {
@@ -113,4 +205,9 @@ $hover-light: rgb(123, 231, 247);
 .gmap_canvas iframe {
     width: 100%;
     border: 0;
+}
+
+.container_estadistica {
+    // background-color: red;
+    
 }
