@@ -1,5 +1,6 @@
 export const environment = {
-    apiBaseUrl: 'http://192.168.0.10:5050',
+    // apiBaseUrl: 'http://192.168.0.10:5050',
+    apiBaseUrl: 'http://192.168.137.252:5050',
 
     setUserSession(userName: string) {
         localStorage.setItem('usuario', userName);

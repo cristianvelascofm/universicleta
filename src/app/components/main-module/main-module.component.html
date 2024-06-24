@@ -1,7 +1,7 @@
 <app-header (menuSelector)="actualWindow($event)" />
 <div class="content">
     <app-home-page *ngIf="home" />
-    <!-- <app-nosotros *ngIf="nosotros"/> -->
+    <app-nosotros-page *ngIf="nosotros"/>
     <app-how-to-use *ngIf="comoFunciona" />
     <app-entrega-page *ngIf="entrega" />
     <app-reservation-page *ngIf="reserva" />

@@ -21,7 +21,8 @@ export class HeaderComponent implements OnInit {
   finance = false;
   agenda = false;
   registro = false;
-  currentYear = new Date().getFullYear(); selectedItem: string = 'home';
+  currentYear = new Date().getFullYear(); 
+  selectedItem: string = 'home';
   ngOnInit(): void {
     this.verificatorLogin()
   }
@@ -50,6 +51,7 @@ export class HeaderComponent implements OnInit {
 
 
   goTo(window: string){
+    this.selectedItem = window
     this.menuSelector.emit(window);
    
   }

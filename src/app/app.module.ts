@@ -23,6 +23,7 @@ import { RegisterDialogComponent } from './dialogs/register-dialog/register-dial
 import { HowToUsePageComponent } from './components/how-to-use-page/how-to-use-page.component';
 import { ReservationPageComponent } from './components/reservation-page/reservation-page.component';
 import { EntregaPageComponent } from './components/entrega-page/entrega-page.component';
+import { NosotrosPageComponent } from './components/nosotros-page/nosotros-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EntregaPageComponent } from './components/entrega-page/entrega-page.com
     RegisterDialogComponent,
     HowToUsePageComponent,
     ReservationPageComponent,
-    EntregaPageComponent
+    EntregaPageComponent,
+    NosotrosPageComponent
   ],
   imports: [
     BrowserModule,

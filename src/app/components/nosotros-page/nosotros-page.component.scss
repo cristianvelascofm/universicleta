@@ -5,13 +5,6 @@ $hover-dark :rgb(64, 51, 182);
 $hover-light: rgb(123, 231, 247);
 
 
-$primary : rgb(24, 133, 223);
-$warn : rgb(228, 26, 38);
-$accent :rgb(56, 203, 252);
-$hover-dark :rgb(64, 51, 182);
-$hover-light: rgb(123, 231, 247);
-
-
 
 .container-principal {
     width: 100%;
@@ -59,11 +52,10 @@ $hover-light: rgb(123, 231, 247);
 }
 
 .container_child_button {
-    background-color: #249300;
-    width: 100% !important;
+    background-color: #DB141C;
+    width: 80% !important;
     color: white;
     padding: 10px;
-    padding-bottom: 3px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -221,145 +213,4 @@ $hover-light: rgb(123, 231, 247);
 .container_estadistica {
     // background-color: red;
     
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .parent-div {
-//     background-color: $accent;
-//     padding: 20px;
-//     border-radius: 15px;
-//     width: 80%;
-//     margin: 20px auto;
-//     text-align: center;
-// }
-
-// .col-md-6.text-center.d-flex {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     text-align: center;
-// }
-
-// .button-container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 10px;
-// }
-
-// .btn {
-//     border-radius: 15px;
-// }
-
-// .container {
-//     width: 100%;
-// }
-
-// .img-fluid {
-//     max-width: 45%;
-//     height: min-content;
-// }
-
-// .img-cus{
-//     max-width: 70%;
-//     height: auto;
-// }
-
-// .inicio {
-//     background-color: #112979;
-//     padding: 40px 0;
-// }
-
-// .inicio h2 {
-//     color: white;
-//     margin-top: 3rem;
-//     margin-left: 70px;
-// }
-
-// .inicio p.first {
-//     color: white;
-//     margin-top: 3rem;
-//     margin-bottom: 3rem;
-//     margin-left: 70px;
-//     font-size: 18px;
-// }
-
-// .secone{
-//     padding: 60px 0;
-// }
-
-// .secone h2{
-//     margin-bottom: 4rem;
-// }
-
-// .sectree{
-//     padding: 40px 0;
-//     margin-top: 3rem;
-// }
-
-// .title{
-//     color: $hover-dark;
-// }
-
-// .stitle{
-//     color: $accent;
-// }
-
-.small-carousel {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.carousel-indicators {
-    position: static;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.carousel-indicators button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #007bff;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    margin: 0 5px;
-    font-size: 16px;
-}
-
-.carousel-indicators button.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.carousel-indicators button:hover {
-    background-color: #0056b3;
-    color: #fff;
-}
-
-.carousel-indicators button:focus {
-    outline: none;
 }
