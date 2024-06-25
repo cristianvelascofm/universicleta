@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   currentYear = new Date().getFullYear(); 
   selectedItem: string = 'home';
   ngOnInit(): void {
-    this.verificatorLogin()
+    this.loginVerificator()
   }
   title: string = 'Logo'
   logged = false
@@ -33,19 +33,24 @@ export class HeaderComponent implements OnInit {
   menuSelector: EventEmitter <string> = new EventEmitter <string>();
 
   reservar() {
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      disableClose: false,
-      width: '350px',
-      // height: '800px'
-      data: {
-        title: 'Iniciar Sesión',
-        logged: this.logged
-      }
-    });
-    dialogRef.afterClosed().subscribe(res => {
-      this.verificatorLogin()
+    if (this.logged == false){
+      const dialogRef = this.dialog.open(LoginDialogComponent, {
+        disableClose: false,
+        width: '450px',
+        // height: '800px'
+        data: {
+          title: 'Iniciar Sesión',
+          logged: this.logged
+        }
+      });
+      dialogRef.afterClosed().subscribe(res => {
+        this.loginVerificator()
+  
+      })
+    }else{
+      this.goTo('reservar')
+    }
 
-    })
   }
 
 
@@ -56,7 +61,15 @@ export class HeaderComponent implements OnInit {
    
   }
 
-  logout() { }
+  logout() {
+    alert("Sesión Finalizada");
+    localStorage.clear()
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('token');
+    window.location.href = "/";
+
+  }
+
 
   ping() {
     console.log("Realizando Ping...")
@@ -66,7 +79,7 @@ export class HeaderComponent implements OnInit {
   }
 
   
-  verificatorLogin() {
+  loginVerificator() {
     if (environment.getUserSession() != 'null') {
       this.logged = true
     }

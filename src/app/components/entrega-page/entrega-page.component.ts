@@ -66,4 +66,6 @@ export class EntregaPageComponent {
     this.countdownSeconds = 0;
     clearInterval(this.countdownTimer);
   }
+
+  reservar(){}
 }

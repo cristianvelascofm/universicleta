@@ -1,3 +1,43 @@
+<div class="container-principal">
+    <div class="bigcontainer m-0 p-0" style="height: 100%; width: 100%;">
+        <div class="greeting saludo">Hola, {{ user }}</div>
+        <form (ngSubmit)="reservar()" #proyectoForm="ngForm" class="w-100">
+            <div class="row m-0 p-0 justify-content-center w-100">
+                <div class="col-12 col-md-6 form-field-wrapper" style="display: flex; justify-content: center;">
+                    <!-- <mat-icon class="estacion">directions_bike</mat-icon> -->
+                    <mat-form-field class="example-full-width mt-2 w-100">
+                        <mat-label>Estación de Partida</mat-label>
+                        <mat-select [formControl]="estacionControl" required (selectionChange)="onSelectionComponent()">
+                            <mat-option *ngFor="let estacion of estaciones" [value]="estacion">{{ estacion.estacion }}
+                            </mat-option>
+                            <mat-option value="null">-- Ninguna --</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="estacionControl.hasError('required')">Por favor, elija al menos una Estación
+                            disponible</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-md-6 form-field-wrapper d-flex justify-content-center mt-3 mt-md-0">
+                    <button [disabled]="estacionControl.hasError('required')" mat-raised-button (click)="reservar()"
+                        class="boton-reservar" matTooltip="Info about the action">Reservar</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="reservation-details-container text-center mt-3" *ngIf="reservationInfoVisible">
+            <p>{{ currentDateTime }}</p>
+            <p>Tu bicicleta ha sido reservada exitosamente: {{ bikeName }} - {{ bikeNumber }}</p>
+            <div *ngIf="countdownMinutes > 0 || countdownSeconds > 0">
+                <p>Temporizador: {{ countdownMinutes }} min {{ countdownSeconds }} seg restantes</p>
+                <div class="button-container mt-3">
+                    <button class="btn btn-unlock btn-warning" (click)="desbloquear()">Desbloquear Bici</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="bigcontainer">
     <div class="greeting">Hola, {{ user }}</div>
 

@@ -28,4 +28,12 @@ export class UniversicletaService {
     };
     return this.http.post<any[]>(this.path, dictSend, { headers: this.headers });
   }
+
+
+  obtenerEstaciones(): Observable<any[]> {
+    const dictSend = {
+      action: "obtener-estaciones",
+    };
+    return this.http.post<any[]>(this.path, dictSend, { headers: this.headers });
+  }
 }

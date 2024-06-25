@@ -34,11 +34,16 @@
                             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
                                 'visibility'}}</mat-icon>
                         </mat-form-field>
-
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <button mat-flat-button color="primary" class="btn-confirm" type="submit">Iniciar</button>
-                    </div>
+                    <!-- <div class="d-grid gap-2 d-md-flex justify-content-center"> -->
+                        <div class="row w-100 m-0" >
+                            <div class="col-12 col-md-8  w-100 m-0 p-0 d-flex flex-column align-items-md-end">
+                                <button mat-flat-button color="primary" class="btn-confirm" type="submit">Iniciar</button>
+                            </div>
+                            <div class="col-12 col-md-4 d-flex flex-column align-items-start m-0 p-0">
+                                <img src="../../../assets/images/Capi.png" class="capi_logo" alt="">
+                            </div>
+                        </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
                         <a href="">¿Olvidaste la Contraseña?</a>
                     </div>
