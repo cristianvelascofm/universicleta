@@ -4,11 +4,7 @@ $accent :rgb(56, 203, 252);
 $hover-dark :rgb(64, 51, 182);
 $hover-light: rgb(123, 231, 247);
 
-.greeting {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 25px;
-}
+
 
 .container {
     background-color: #f0f0f0; 
@@ -55,8 +51,9 @@ $hover-light: rgb(123, 231, 247);
 .container-principal {
     width: 100%;
     max-width: 100%;
+    height: 72vh;
     /* Asegura que el contenedor principal no exceda el ancho de la pantalla */
-    // background-color: #000066;
+    // background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,21 +63,41 @@ $hover-light: rgb(123, 231, 247);
 }
 .bigcontainer {
     background-color: #000066;
+    // display: flex;
+    // flex-direction: column; /* Organiza en columna */
+    // justify-content: center;
+    // align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-left: 60px !important;
+    height: auto !important;
+    width: 100%;
+    border-radius: 25px;
+    border: solid 2px white;
+}
+
+.container-reserva {
+    background-color: #5BAE40;
     display: flex;
     flex-direction: column; /* Organiza en columna */
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    height: 100%;
+    height: auto !important;
     width: 100%;
     border-radius: 25px;
     border: solid 2px white;
 }
-
 .saludo {
     color: white;
     margin-bottom: 10px;
+}
+
+.greeting {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 25px;
 }
 
 .form-field-wrapper {
@@ -106,13 +123,20 @@ $hover-light: rgb(123, 231, 247);
     background-color: #9fa4b1 !important;
 }
 
+.boton-cancelar {
+    width: 40%; /* Ancho completo */
+    height: 60%; /* Ajusta la altura automáticamente */
+    background-color: #DB141C !important;
+    color: white !important;
+}
+
 .reservation-details-container {
     margin-top: 20px;
     background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%;
     max-width: 600px; /* Define un ancho máximo */
 }
 
@@ -123,6 +147,11 @@ $hover-light: rgb(123, 231, 247);
     }
 
     .boton-reservar {
-        width: 100%; /* Ancho completo del botón */
+        width: 100%;
+        height: auto; /* Ancho completo del botón */
+    }
+    .boton-reservar:disabled {
+        width: 100%;
+        height: 100%; /* Ancho completo del botón */
     }
 }

@@ -5,6 +5,7 @@ import swal from 'sweetalert2';
 import { NotificationDialogComponent } from 'src/app/dialogs/notification-dialog/notification-dialog.component';
 import { UniversicletaService } from 'src/app/services/universicleta.service';
 import { FormControl, Validators } from '@angular/forms';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-reservation-page',
@@ -19,6 +20,8 @@ export class ReservationPageComponent implements OnInit {
   estaciones: any[] = []
   estacionControl = new FormControl<any[]>([], [Validators.required]);
   estacionSeleccionada: any = {}
+  countdownSubscription: Subscription | null = null;
+  reservaActiva = false;
   selectedStation: string = '';
   stationSelected: boolean = false;
   user: string = 'Pepe';
@@ -56,7 +59,8 @@ export class ReservationPageComponent implements OnInit {
   reservar(): void {
     swal.fire('¡Notificacion!', `Reserva exitosa!`, 'success');
     this.reservationInfoVisible = true;
-    this.startCountdown();
+    this.startCountdown(10);
+    this.reservaActiva= true
   }
 
   desbloquear(): void {
@@ -67,6 +71,7 @@ export class ReservationPageComponent implements OnInit {
     swal.fire('¡Notificacion!', `Reserva cancelada!`, 'error');
     this.reservationInfoVisible = false;
     this.resetCountdown();
+    this.reservaActiva = false
   }
 
   updateDateTime(): void {
@@ -74,19 +79,28 @@ export class ReservationPageComponent implements OnInit {
     this.currentDateTime = now.toLocaleString();
   }
 
-  startCountdown(): void {
-    this.countdownTimer = setInterval(() => {
-      if (this.countdownMinutes > 0 || this.countdownSeconds > 0) {
-        if (this.countdownSeconds > 0) {
-          this.countdownSeconds--;
-        } else {
-          this.countdownSeconds = 59;
-          this.countdownMinutes--;
-        }
+  startCountdown(minutes: number) {
+    const countdownTime = minutes * 60; // Convertir minutos a segundos
+    this.countdownMinutes = Math.floor(countdownTime / 60);
+    this.countdownSeconds = countdownTime % 60;
+
+    if (this.countdownSubscription) {
+      this.countdownSubscription.unsubscribe();
+    }
+
+    this.countdownSubscription = interval(1000).subscribe(() => {
+      if (this.countdownSeconds > 0) {
+        this.countdownSeconds--;
       } else {
-        clearInterval(this.countdownTimer);
+        if (this.countdownMinutes > 0) {
+          this.countdownMinutes--;
+          this.countdownSeconds = 59;
+        } else {
+          // Cuenta regresiva completada
+          this.countdownSubscription?.unsubscribe();
+        }
       }
-    }, 1000);
+    });
   }
 
   resetCountdown(): void {

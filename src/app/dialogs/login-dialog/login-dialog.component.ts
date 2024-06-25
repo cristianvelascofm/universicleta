@@ -4,6 +4,7 @@ import { environment } from 'src/app/environment/config';
 import { PersonService } from 'src/app/services/person.service';
 import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 import { SpinnerService } from 'src/app/services/spinner.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login-dialog',
@@ -33,23 +34,25 @@ export class LoginDialogComponent implements OnInit {
   respuestaJson: any = {};
   async login() {
     if (this.usuario == '' || this.password == '') {
-      alert('Debe ingresar todos los campos');
+      // alert('Debe ingresar todos los campos');
+      swal.fire('¡Notificacion!', `Debes ingresar todos los campos!`, 'error');
     }
     else {
       this.spinner.show()
       this.personaService.login(this.usuario, this.password).subscribe((response: any) => {
-        console.log("Respuesta: ", response);
+        // console.log("Respuesta: ", response);
+        
         this.respuestaJson = response;
         if (!response["error"]) {
           this.spinner.hide()
           environment.setUserSession(this.usuario)
           environment.setTokenUserSession(response["acces_token"])
           environment.setRoleUserSession(response["role"])
-          alert("Bienvenido");
+          swal.fire('¡Notificacion!','¡Bienvenido!', 'success');
           this.dialogRef.close();
         } else {
           this.spinner.hide()
-          alert("Error: " + response["error"])
+          swal.fire('¡Notificacion!',response["error"], 'error');
         }
       })
     }
