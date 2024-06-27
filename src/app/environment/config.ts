@@ -1,5 +1,5 @@
 export const environment = {
-    apiBaseUrl: 'http://192.168.130.79:5050',
+    apiBaseUrl: 'http://192.168.20.22:5050',
     // apiBaseUrl: 'http://192.168.137.252:5050',
 
     setUserSession(userName: string) {

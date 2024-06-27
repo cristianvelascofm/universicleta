@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginDialogComponent } from 'src/app/dialogs/login-dialog/login-dialog.component';
 import { environment } from 'src/app/environment/config';
 import { UniversicletaService } from 'src/app/services/universicleta.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit {
   finance = false;
   agenda = false;
   registro = false;
-  currentYear = new Date().getFullYear(); 
+  currentYear = new Date().getFullYear();
   selectedItem: string = 'home';
   ngOnInit(): void {
     this.loginVerificator()
@@ -30,10 +31,10 @@ export class HeaderComponent implements OnInit {
   logged = false
 
   @Output()
-  menuSelector: EventEmitter <string> = new EventEmitter <string>();
+  menuSelector: EventEmitter<string> = new EventEmitter<string>();
 
   reservar() {
-    if (this.logged == false){
+    if (this.logged == false) {
       const dialogRef = this.dialog.open(LoginDialogComponent, {
         disableClose: false,
         width: '450px',
@@ -45,9 +46,9 @@ export class HeaderComponent implements OnInit {
       });
       dialogRef.afterClosed().subscribe(res => {
         this.loginVerificator()
-  
+
       })
-    }else{
+    } else {
       this.goTo('reservar')
     }
 
@@ -55,17 +56,17 @@ export class HeaderComponent implements OnInit {
 
 
 
-  goTo(window: string){
+  goTo(window: string) {
     this.selectedItem = window
     this.menuSelector.emit(window);
-   
+
   }
 
   logout() {
-    alert("Sesión Finalizada");
     localStorage.clear()
     localStorage.removeItem('usuario');
     localStorage.removeItem('token');
+    swal.fire('¡Notificación!', "Sesión Finalizada", 'warning');
     window.location.href = "/";
 
   }
@@ -78,7 +79,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  
+
   loginVerificator() {
     if (environment.getUserSession() != 'null') {
       this.logged = true

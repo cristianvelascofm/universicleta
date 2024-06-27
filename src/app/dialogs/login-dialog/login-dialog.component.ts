@@ -35,7 +35,8 @@ export class LoginDialogComponent implements OnInit {
   async login() {
     if (this.usuario == '' || this.password == '') {
       // alert('Debe ingresar todos los campos');
-      swal.fire('¡Notificacion!', `Debes ingresar todos los campos!`, 'error');
+      swal.fire('¡Notificación!', `Debes ingresar todos los campos!`, 'warning');
+      return;
     }
     else {
       this.spinner.show()
@@ -48,11 +49,11 @@ export class LoginDialogComponent implements OnInit {
           environment.setUserSession(this.usuario)
           environment.setTokenUserSession(response["acces_token"])
           environment.setRoleUserSession(response["role"])
-          swal.fire('¡Notificacion!','¡Bienvenido!', 'success');
+          swal.fire('¡Notificación!','¡Bienvenido!', 'success');
           this.dialogRef.close();
         } else {
           this.spinner.hide()
-          swal.fire('¡Notificacion!',response["error"], 'error');
+          swal.fire('¡Notificación!',response["error"], 'error');
         }
       })
     }

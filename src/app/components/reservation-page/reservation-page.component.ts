@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { PersonService } from 'src/app/services/person.service';
 import swal from 'sweetalert2';
-import { NotificationDialogComponent } from 'src/app/dialogs/notification-dialog/notification-dialog.component';
 import { UniversicletaService } from 'src/app/services/universicleta.service';
 import { FormControl, Validators } from '@angular/forms';
 import { Subscription, interval } from 'rxjs';
+import { environment } from 'src/app/environment/config';
 
 @Component({
   selector: 'app-reservation-page',
@@ -15,7 +13,7 @@ import { Subscription, interval } from 'rxjs';
 export class ReservationPageComponent implements OnInit {
 
   //TODO: traer datos de las estaciones desde el back
-  constructor(private person: PersonService, private universicleta: UniversicletaService) { }
+  constructor(private universicleta: UniversicletaService) { }
 
   estaciones: any[] = []
   estacionControl = new FormControl<any[]>([], [Validators.required]);
@@ -35,7 +33,7 @@ export class ReservationPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerEstaciones()
-    this.user = this.person.username;
+    this.user = environment.getUserSession()
     this.updateDateTime();
   }
 
@@ -57,10 +55,17 @@ export class ReservationPageComponent implements OnInit {
   }
 
   reservar(): void {
-    swal.fire('¡Notificacion!', `Reserva exitosa!`, 'success');
+    swal.fire('¡Notificación!', `Reserva exitosa!`, 'success')
+    // .then((result) =>{
+    //   if (result.isConfirmed) {
+    //     swal.fire("Saved!", "", "success");
+    //   } else if (result.isDenied) {
+    //     swal.fire("Changes are not saved", "", "info");
+    //   }
+    // });
     this.reservationInfoVisible = true;
     this.startCountdown(10);
-    this.reservaActiva= true
+    this.reservaActiva = true
   }
 
   desbloquear(): void {
@@ -68,7 +73,7 @@ export class ReservationPageComponent implements OnInit {
   }
 
   cancelarReserva(): void {
-    swal.fire('¡Notificacion!', `Reserva cancelada!`, 'error');
+    swal.fire('¡Notificación!', `Reserva cancelada!`, 'warning');
     this.reservationInfoVisible = false;
     this.resetCountdown();
     this.reservaActiva = false

@@ -33,10 +33,10 @@ export class EntregaPageComponent {
   }
 
   reportarNovedad(): void {
-    swal.fire('¡Notificacion!', `Notificacion enviada!`, 'info');
+    swal.fire('¡Notificación!', `Notificación enviada!`, 'info');
   }
   entregar(): void {
-    swal.fire('¡Notificacion!', `Recuerda estar en la estacion para la entrega, tienes 5 minutos!`, 'warning');
+    swal.fire('¡Notificación!', `Recuerda estar en la estacion para la entrega, tienes 5 minutos!`, 'warning');
     this.startCountdown();
     
   }
